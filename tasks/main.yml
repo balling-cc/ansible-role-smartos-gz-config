@@ -1,0 +1,37 @@
+---
+- name: Configure admin IP address
+  replace:
+    path: /usbkey/config
+    regexp: '^admin_ip=(?!{{ smartos_gz_config_admin_ip }}).*$'
+    replace: 'admin_ip={{ smartos_gz_config_admin_ip }}'
+
+- name: Configure DNS resolvers
+  replace:
+    path: /usbkey/config
+    regexp: '^dns_resolvers=(?!{{ smartos_gz_config_dns_resolvers }}).*$'
+    replace: 'dns_resolvers={{ smartos_gz_config_dns_resolvers }}'
+
+- name: Configure DNS domain
+  replace:
+    path: /usbkey/config
+    regexp: '^dns_domain=(?!{{ smartos_gz_config_dns_domain }}).*$'
+    replace: 'dns_domain={{ smartos_gz_config_dns_domain }}'
+
+- name: Configure NTP hosts
+  replace:
+    path: /usbkey/config
+    regexp: '^ntp_hosts=(?!{{ smartos_gz_config_ntp_hosts }}).*$'
+    replace: 'ntp_hosts={{ smartos_gz_config_ntp_hosts }}'
+
+- name: Configure hostname
+  replace:
+    path: /usbkey/config
+    regexp: '^hostname=(?!{{ smartos_gz_config_hostname }}).*$'
+    replace: 'hostname={{ smartos_gz_config_hostname }}'
+
+- name: Configure default keymap
+  lineinfile:
+    path: /usbkey/config
+    state: present
+    backup: yes
+    line: 'default_keymap={{ smartos_gz_config_default_keymap }}'

@@ -1,0 +1,8 @@
+---
+smartos_gz_config_admin_ip: dhcp
+smartos_gz_config_dns_resolvers: 8.8.8.8,8.8.4.4
+smartos_gz_config_dns_domain: example.com
+smartos_gz_config_ntp_hosts: 0.smartos.pool.ntp.org
+smartos_gz_config_hostname: www.example.com
+smartos_gz_config_default_keymap: us
+
